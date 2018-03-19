@@ -15,10 +15,12 @@ window.onerror = function myErrorHandler(errorMsg, url, lineNumber) {
 }
 
 var bindingsReady = false;
+var cameraObject;
 
 function onBindingsReady(evt) {
   debug("bindings ready!");
   bindingsReady = true;
-  debug(engine.call("VRCSDK2.VRC_SceneDescriptor.GetPrefab", "CustomCamera"));
+  cameraObject = engine.call("VRCSDK2.Networking.Instantiate", "CustomCamera");
+  debug(cameraObject);
 }
 document.addEventListener('onBindingsReady', onBindingsReady, false);
