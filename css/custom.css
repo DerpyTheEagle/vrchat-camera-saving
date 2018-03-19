@@ -1,0 +1,13 @@
+#devconsole {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  overflow: scroll;
+}
+
+#devconsole p {
+  font-family: 'Inconsolata', monospace;
+  color: white;
+  margin-left: 10px;
+}

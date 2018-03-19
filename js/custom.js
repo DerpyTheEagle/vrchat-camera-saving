@@ -1,0 +1,24 @@
+// Something doesn't play nice with the $ selector, so we need noConflict
+jQuery.noConflict();
+
+// we can't see the console.log in game, so let's use our own function for output!
+function debug(text) {
+  console.log(text);
+  // append our output to the dev console
+  jQuery("#devconsole").append("<p>" + text + "</p>");
+}
+
+// if anything breaks, let's print it to our own homebrew console
+window.onerror = function myErrorHandler(errorMsg, url, lineNumber) {
+  debug("ERROR: " + errorMsg + " on line " + lineNumber + " in file " + url);
+  return false;
+}
+
+var bindingsReady = false;
+
+function onBindingsReady(evt) {
+  debug("bindings ready!");
+  bindingsReady = true;
+  debug(engine.call("VRCSDK2.VRC_SceneDescriptor.GetPrefab", "CustomCamera"));
+}
+document.addEventListener('onBindingsReady', onBindingsReady, false);
