@@ -1,0 +1,1 @@
+# vrchat-camera-saving
