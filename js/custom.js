@@ -20,7 +20,6 @@ var cameraObject;
 function onBindingsReady(evt) {
   debug("bindings ready!");
   bindingsReady = true;
-  cameraObject = engine.call("VRCSDK2.Networking.Instantiate", "CustomCamera");
-  debug(engine.call("VRCSDK2.Networking.EncodeParameters", "CustomCamera", "CameraData"));
+  debug("vorlon should be ready now, too!");
 }
 document.addEventListener('onBindingsReady', onBindingsReady, false);
