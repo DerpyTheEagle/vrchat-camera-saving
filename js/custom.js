@@ -21,6 +21,6 @@ function onBindingsReady(evt) {
   debug("bindings ready!");
   bindingsReady = true;
   cameraObject = engine.call("VRCSDK2.Networking.Instantiate", "CustomCamera");
-  debug(cameraObject);
+  debug(engine.call("VRCSDK2.Networking.EncodeParameters", "CustomCamera", "CameraData"));
 }
 document.addEventListener('onBindingsReady', onBindingsReady, false);
